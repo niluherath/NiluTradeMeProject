@@ -1,8 +1,16 @@
 package UI_test.Login;
 
 import org.testng.annotations.*;
+import reports.ExtentManager;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 public class TradeMeTest {
+
+    @BeforeSuite
+    public void beforeSuite() {
+        ExtentManager.setExtent();
+    }
 
     //1
     @BeforeSuite
@@ -48,10 +56,9 @@ public class TradeMeTest {
     }
 
     @AfterSuite
-    public void createTestReport(){
-        System.out.println("Create test report");
+    public void afterSuite() {
+        ExtentManager.endReport();
     }
-
 
 
 
