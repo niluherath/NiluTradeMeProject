@@ -11,12 +11,7 @@ public class ExtentManager {
     public static ExtentTest test;
 
     public static void setExtent() {
-      //  htmlReporter = new ExtentHtmlReporter(
-      //          System.getProperty("user.dir") + "/test-output/ExtentReport/"
-      //                  + "TestExecutionReport"
-      //                  + ".html");
-
-        htmlReporter = new ExtentHtmlReporter(
+         htmlReporter = new ExtentHtmlReporter(
                 System.getProperty("user.dir") + "/target/"
                         + "TestExecutionReport"
                         + ".html");
