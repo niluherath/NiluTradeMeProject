@@ -7,13 +7,17 @@ import org.testng.annotations.BeforeSuite;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.testng.ITestResult;
+
 public class TradeMeTest {
 
     WebDriver driver;
+    ExtentManager extentManager;
+    ITestResult result;
 
     @BeforeSuite
     public void beforeSuite() {
-        ExtentManager.setExtent();
+        extentManager.setExtent();
     }
 
     //1
@@ -53,6 +57,7 @@ public class TradeMeTest {
     @AfterMethod
     public void logOut(){
         System.out.println("Log out");
+
     }
 
    // @AfterTest
@@ -72,7 +77,7 @@ public class TradeMeTest {
 
     @AfterSuite
     public void afterSuite() {
-        ExtentManager.endReport();
+        extentManager.endReport();
 
     }
 
