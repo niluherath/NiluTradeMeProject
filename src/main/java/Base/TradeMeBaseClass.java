@@ -1,5 +1,6 @@
-package UI_test.Login;
+package Base;
 
+import Utils.ConfigLoader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.*;
 import reports.ExtentManager;
@@ -19,6 +20,7 @@ public class TradeMeBaseClass {
     @BeforeSuite
     public void beforeSuite() {
         extentManager.setExtent();
+     //   System.setProperty("webdriver.chrome.driver", "C:\\chromeDriver\\chromedriver.exe");
 
     }
 
@@ -48,7 +50,8 @@ public class TradeMeBaseClass {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.navigate().to("https://www.trademe.co.nz/a/");
+        driver.navigate().to(ConfigLoader.getInstance().getBaseURL());
+
     }
 
 

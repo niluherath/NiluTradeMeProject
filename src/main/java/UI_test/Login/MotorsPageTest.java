@@ -1,5 +1,6 @@
 package UI_test.Login;
 
+import Base.TradeMeBaseClass;
 import org.testng.annotations.Test;
 
 

@@ -5,8 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 public class LandingPage {
 
-    WebDriver driver;
-    WaitUtility waitUtility;
+    private WebDriver driver;
+    private WaitUtility waitUtility;
 
     public LandingPage(WebDriver driver) {
         this.driver=driver;

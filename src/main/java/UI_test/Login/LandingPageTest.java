@@ -1,6 +1,7 @@
 package UI_test.Login;
 
 
+import Base.TradeMeBaseClass;
 import PageObjects.LandingPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
