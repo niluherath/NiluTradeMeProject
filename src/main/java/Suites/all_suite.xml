@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" >
+<suite name="Landing Page Test Suite" >
     <test verbose="2" preserve-order="true" name="C:/cool-workspace/NiluTestProject/src/test/java">
-    <classes>
-        <class name="UI_test.Login.LandingPageTest"></class>
-        <class name="UI_test.Login.MotorsPageTest"></class>
+        <classes>
+            <class name="UI_test.Login.LandingPageTest"></class>
+            <class name="UI_test.Motors.MotorsPageTest"></class>
 
-    </classes>
+        </classes>
     </test>
     <listeners>
         <listener class-name="UI_test.Listeners.CustomisedListener" />

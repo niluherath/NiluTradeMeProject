@@ -1,4 +1,4 @@
-package UI_test.Login;
+package UI_test.Motors;
 
 import Base.TradeMeBaseClass;
 import org.testng.annotations.Test;
