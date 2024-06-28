@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.testng.ITestResult;
 
-public class TradeMeTest {
+public class TradeMeBaseClass {
 
     WebDriver driver;
     ExtentManager extentManager;
@@ -18,15 +18,8 @@ public class TradeMeTest {
     @BeforeSuite
     public void beforeSuite() {
         extentManager.setExtent();
-    }
-
-    //1
-    @BeforeSuite
-    public void setChromeProperty(){
-
         System.out.println("set chrome property");
         System.setProperty("webdriver.chrome.driver", "C:\\chromeDriver\\chromedriver.exe");
-
     }
 
     //2
@@ -48,7 +41,7 @@ public class TradeMeTest {
 
     //4
     @BeforeMethod
-    public void enterURL(){
+    public void login(){
         System.out.println("Log in");
     }
 

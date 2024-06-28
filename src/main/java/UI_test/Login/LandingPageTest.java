@@ -1,17 +1,18 @@
 package UI_test.Login;
 
 
+import PageObjects.LandingPage;
 import org.testng.Assert;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 
-public class LandingPageTest extends TradeMeTest {
+public class LandingPageTest extends TradeMeBaseClass {
 
 
     @Test
     public void testLandingPage(){
         System.out.println("testing Landing Page");
+        LandingPage landingPage = new LandingPage(driver);
     }
 
     // Forcefully failed this test as to verify listener.

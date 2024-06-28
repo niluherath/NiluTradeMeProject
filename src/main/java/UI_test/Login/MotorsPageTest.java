@@ -3,7 +3,7 @@ package UI_test.Login;
 import org.testng.annotations.Test;
 
 
-public class MotorsPageTest extends TradeMeTest {
+public class MotorsPageTest extends TradeMeBaseClass {
 
 
     @Test
