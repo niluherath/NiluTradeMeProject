@@ -21,8 +21,7 @@ public class LandingPage {
 
     public boolean exists(){
         waitUtility = new WaitUtility();
-        boolean  hasPage = waitUtility.dynamicExists(LoginBtn, "Buy & Sell on NZ's #1 Auction & Classifieds Site | Trade Me");
-        return hasPage;
+        return waitUtility.dynamicExists(LoginBtn, "Buy & Sell on NZ's #1 Auction & Classifieds Site | Trade Me");
     }
 
 }

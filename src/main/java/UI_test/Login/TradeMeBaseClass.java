@@ -1,5 +1,6 @@
 package UI_test.Login;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.*;
 import reports.ExtentManager;
 import org.testng.annotations.AfterSuite;
@@ -11,15 +12,14 @@ import org.testng.ITestResult;
 
 public class TradeMeBaseClass {
 
-    WebDriver driver;
+    protected WebDriver driver;
     ExtentManager extentManager;
     ITestResult result;
 
     @BeforeSuite
     public void beforeSuite() {
         extentManager.setExtent();
-        System.out.println("set chrome property");
-        System.setProperty("webdriver.chrome.driver", "C:\\chromeDriver\\chromedriver.exe");
+
     }
 
     //2
@@ -31,25 +31,32 @@ public class TradeMeBaseClass {
 
   //  }
     //3
-    @BeforeClass
-    public void launchUrl(){
-        System.out.println("Launch url");
-        driver = new ChromeDriver();
-        driver.navigate().to("https://www.trademe.co.nz/a/");
+  //  @BeforeClass
+ //   public void launchUrl(){
+ //      System.out.println("Launch url");
+  //      driver = new ChromeDriver();
+  //      driver.manage().window().maximize();
+  //      driver.navigate().to("https://www.trademe.co.nz/a/");
 
-    }
+  //  }
 
     //4
     @BeforeMethod
-    public void login(){
-        System.out.println("Log in");
+    public void startDriver(){
+
+        System.out.println("Start driver");
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.navigate().to("https://www.trademe.co.nz/a/");
     }
 
 
 
     @AfterMethod
-    public void logOut(){
-        System.out.println("Log out");
+    public void stopDriver(){
+        System.out.println("Stop driver");
+        driver.quit();
 
     }
 
@@ -61,18 +68,17 @@ public class TradeMeBaseClass {
   //  }
 
 
-    @AfterClass
-    public void closeBrowser(){
+   /// @AfterClass
+   // public void closeBrowser(){
 
-        System.out.println("Close browser");
-        driver.close();
-    }
+  //      System.out.println("Close browser");
+ //       driver.close();
+  //  }
 
     @AfterSuite
     public void afterSuite() {
         extentManager.endReport();
 
     }
-
 
 }
