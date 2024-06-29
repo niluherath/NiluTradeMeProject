@@ -2,9 +2,12 @@ package reports;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+//import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 //decides where report will land
+
+
+/**
 public class ExtentManager {
 
     public static ExtentHtmlReporter htmlReporter;
@@ -23,6 +26,24 @@ public class ExtentManager {
         extent.attachReporter(htmlReporter);
     }
 
+    public void given(String given){
+        test.info("<b>Given</b>"+given);
+    }
+
+    public void when(String when){
+        test.info("<b>When</b>"+when);
+    }
+
+    public void and(String and){
+        test.info("<b>And</b>"+and);
+    }
+
+    public void then(String then){
+        test.info("<b>Then</b>"+then);
+    }
+
+
+
 
 
 
@@ -33,3 +54,6 @@ public class ExtentManager {
         extent.flush();
     }
 }
+
+
+ **/

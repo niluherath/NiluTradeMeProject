@@ -14,7 +14,7 @@
 
     <listeners>
         <listener
-                class-name="reports.ExtentReportListener"/>
+                class-name="UI_test.Listeners.ExtentReportListener"/>
     </listeners>
 
 </suite>

@@ -1,4 +1,4 @@
-package reports;
+package UI_test.Listeners;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
@@ -11,6 +11,10 @@ import java.util.Map;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+//import reports.ExtentManager;
+
+/**
+
 public class ExtentReportListener extends ExtentManager implements ITestListener{
 
     public void onTestStart(ITestResult result) {
@@ -64,3 +68,6 @@ public class ExtentReportListener extends ExtentManager implements ITestListener
         }
     }
 }
+
+
+ **/

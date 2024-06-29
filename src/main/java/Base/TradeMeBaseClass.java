@@ -1,9 +1,10 @@
 package Base;
 
 import Utils.ConfigLoader;
+import com.aventstack.extentreports.ExtentTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.*;
-import reports.ExtentManager;
+//import reports.ExtentManager;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.openqa.selenium.WebDriver;
@@ -11,18 +12,39 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.testng.ITestResult;
 
-public class TradeMeBaseClass {
+public abstract class TradeMeBaseClass {
 
     protected WebDriver driver;
-    ExtentManager extentManager;
+  //  ExtentManager extentManager;
     ITestResult result;
+
+    public static ExtentTest test;
 
     @BeforeSuite
     public void beforeSuite() {
-        extentManager.setExtent();
+     //   extentManager.setExtent();
      //   System.setProperty("webdriver.chrome.driver", "C:\\chromeDriver\\chromedriver.exe");
 
     }
+
+
+    public void given(String given){
+
+        test.info("<b>Given</b>"+given);
+    }
+
+    public void when(String when){
+        test.info("<b>When</b>"+when);
+    }
+
+    public void and(String and){
+        test.info("<b>And</b>"+and);
+    }
+
+    public void then(String then){
+        test.info("<b>Then</b>"+then);
+    }
+
 
     //2
   //  @BeforeTest
@@ -80,7 +102,7 @@ public class TradeMeBaseClass {
 
     @AfterSuite
     public void afterSuite() {
-        extentManager.endReport();
+     //   extentManager.endReport();
 
     }
 

@@ -12,7 +12,7 @@
     </listeners>
 
     <listeners>
-        <listener class-name="reports.ExtentReportListener"/>
+        <listener class-name="UI_test.Listeners.ExtentReportListener"/>
     </listeners>
 
 </suite>

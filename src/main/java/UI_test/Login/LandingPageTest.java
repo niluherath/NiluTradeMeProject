@@ -1,18 +1,19 @@
 package UI_test.Login;
 
 
-import Base.TradeMeBaseClass;
+import Base.BaseClass;
 import PageObjects.LandingPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 
-public class LandingPageTest extends TradeMeBaseClass {
+public class LandingPageTest extends BaseClass {
 
 
-    @Test
+    @org.testng.annotations.Test
     public void testLandingPage(){
-        System.out.println("testing Landing Page");
+        logger = extent.createTest("To verify Trade me Title");
+        given("Landing page pops up");
         LandingPage landingPage = new LandingPage(driver);
     }
 
