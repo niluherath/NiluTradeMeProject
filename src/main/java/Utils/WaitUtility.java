@@ -31,7 +31,18 @@ public class WaitUtility {
                 .until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));
     }
 
-    public boolean dynamicExists(By element, String title){
+    public boolean waitForElementsToLoadAndValidatePage(By element, String title){
+        try{
+            new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));
+            return driver.getTitle().contains(title);
+        }
+        catch(Exception var){
+            return false;
+        }
+    }
+
+
+    public boolean waitForElementToLoadAndValidatePage(By element, String title){
         try{
             new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));
             return driver.getTitle().contains(title);
