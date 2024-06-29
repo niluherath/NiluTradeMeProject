@@ -35,12 +35,12 @@ public class BaseClass {
         // Create an object of Extent Reports
         extent = new ExtentReports();
 
-        spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/test-output/STMExtentReport.html");
+        spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/target/ExtentReport.html");
         extent.attachReporter(spark);
-        extent.setSystemInfo("Host Name", "SoftwareTestingMaterial");
-        extent.setSystemInfo("Environment", "Production");
-        extent.setSystemInfo("User Name", "Rajkumar SM");
-        spark.config().setDocumentTitle("Title of the Report Comes here ");
+        extent.setSystemInfo("Host Name", "Nilu Trade me project");
+        extent.setSystemInfo("Environment", "");
+        extent.setSystemInfo("User Name", "Nilu Herath");
+        spark.config().setDocumentTitle("Nilu Trade me Project");
         // Name of the report
         spark.config().setReportName("Name of the Report Comes here ");
         // Dark Theme
@@ -61,7 +61,6 @@ public class BaseClass {
 
     @BeforeMethod
     public void setup() {
-        //   System.setProperty("webdriver.chrome.driver","C://AutomationFramework//Drivers//chromedriver.exe");
         System.out.println("Start driver");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();

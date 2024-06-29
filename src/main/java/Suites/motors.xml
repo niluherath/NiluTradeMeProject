@@ -6,13 +6,4 @@
         <class name="UI_test.Motors.MotorsPageTest"></class>
     </classes>
     </test>
-    <listeners>
-        <listener class-name="UI_test.Listeners.CustomisedListener" />
-    </listeners>
-
-    <listeners>
-        <listener
-                class-name="UI_test.Listeners.ExtentReportListener"/>
-    </listeners>
-
 </suite>

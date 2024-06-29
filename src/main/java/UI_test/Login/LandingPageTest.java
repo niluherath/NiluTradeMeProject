@@ -3,6 +3,7 @@ package UI_test.Login;
 
 import Base.BaseClass;
 import PageObjects.LandingPage;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,11 +18,17 @@ public class LandingPageTest extends BaseClass {
         LandingPage landingPage = new LandingPage(driver);
     }
 
-    // Forcefully failed this test as to verify listener.
-    @Test
+    @org.testng.annotations.Test
     public void TestToFail()
     {
-        System.out.println("This method to test fail");
-        Assert.assertTrue(false);
+        logger = extent.createTest("To verify failing test");
+        given("We are purposely failing this test");
+        LandingPage landingPage = new LandingPage(driver);
+        landingPage.clickLogin();
+        boolean img = driver.findElement(By.xpath("//img[@id='hplogo']")).isDisplayed();
+        logger.createNode("Image is Present");
+        Assert.assertTrue(img);
+        logger.createNode("Image is not Present");
+        Assert.assertFalse(img);
     }
 }

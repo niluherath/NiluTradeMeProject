@@ -6,13 +6,4 @@
             <suite-file path="./motors.xml"/>
 
         </suite-files>
-
-    <listeners>
-        <listener class-name="UI_test.Listeners.CustomisedListener" />
-    </listeners>
-
-    <listeners>
-        <listener class-name="UI_test.Listeners.ExtentReportListener"/>
-    </listeners>
-
 </suite>
