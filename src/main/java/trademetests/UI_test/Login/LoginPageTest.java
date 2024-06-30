@@ -1,6 +1,8 @@
 package trademetests.UI_test.Login;
 
+import org.testng.Assert;
 import testframe.base.UIBaseClass;
+import testframe.pageobjects.HomePage;
 import testframe.pageobjects.LandingPage;
 import testframe.pageobjects.LoginPage;
 
@@ -18,5 +20,9 @@ public class LoginPageTest extends UIBaseClass {
         loginPage.enterUsername();
         loginPage.enterPassword();
         loginPage.clickLogin();
+        driver.switchTo().parentFrame();
+        HomePage homePage = new HomePage(driver);
+        Assert.assertEquals(homePage.getTitle(), "Log in | Trade Me");
+
     }
 }

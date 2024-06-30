@@ -1,24 +1,19 @@
 package testframe.pageobjects;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import testframe.utils.ConfigLoader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import testframe.utils.ConfigLoader;
 import testframe.utils.WaitUtility;
 
-import java.time.Duration;
-
-public class LoginPage {
+public class HomePage {
 
     private WebDriver driver;
     private WaitUtility waitUtility;
 
-    public LoginPage(WebDriver driver) {
+    public HomePage(WebDriver driver) {
         this.driver = driver;
         waitUtility = new WaitUtility();
-        waitUtility.waitForIFrameToLoad(driver);
+        waitUtility.waitForPageToLoad(driver, motorsTab);
 
     }
 
@@ -28,11 +23,11 @@ public class LoginPage {
 
     By loginBtn = By.xpath("//button[@value='login']");
 
+    By motorsTab = By.xpath("//li[@class='tm-homepage-search-header__vertical-links-list-item'][3]");
 
-    public void enterUsername() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(userName));
-        driver.findElement(userName).sendKeys(ConfigLoader.getInstance().getUserName());
+
+    public String getTitle() {
+        return driver.getTitle();
     }
 
     public void enterPassword() {
