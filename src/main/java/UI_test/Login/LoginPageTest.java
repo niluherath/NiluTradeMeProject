@@ -26,5 +26,4 @@ public class LoginPageTest extends BaseClass {
         loginPage.enterPassword();
         loginPage.clickLogin();
     }
-
 }
