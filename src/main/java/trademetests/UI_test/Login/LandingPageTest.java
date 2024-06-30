@@ -1,13 +1,13 @@
-package UI_test.Login;
+package trademetests.UI_test.Login;
 
 
-import testframe.base.BaseClass;
+import testframe.base.UIBaseClass;
 import testframe.pageobjects.LandingPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
 
-public class LandingPageTest extends BaseClass {
+public class LandingPageTest extends UIBaseClass {
 
 
     @org.testng.annotations.Test

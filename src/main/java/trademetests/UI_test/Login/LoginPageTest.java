@@ -1,10 +1,10 @@
-package UI_test.Login;
+package trademetests.UI_test.Login;
 
-import testframe.base.BaseClass;
+import testframe.base.UIBaseClass;
 import testframe.pageobjects.LandingPage;
 import testframe.pageobjects.LoginPage;
 
-public class LoginPageTest extends BaseClass {
+public class LoginPageTest extends UIBaseClass {
 
     @org.testng.annotations.Test
     public void testLogin()  {

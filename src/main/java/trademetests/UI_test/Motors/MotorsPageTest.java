@@ -1,10 +1,10 @@
-package UI_test.Motors;
+package trademetests.UI_test.Motors;
 
 import org.testng.annotations.Test;
-import testframe.base.BaseClass;
+import testframe.base.UIBaseClass;
 
 
-public class MotorsPageTest extends BaseClass {
+public class MotorsPageTest extends UIBaseClass {
 
 
     @Test

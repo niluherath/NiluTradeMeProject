@@ -22,7 +22,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-public class BaseClass {
+public class UIBaseClass {
 
     public WebDriver driver;
     public ExtentSparkReporter spark;
