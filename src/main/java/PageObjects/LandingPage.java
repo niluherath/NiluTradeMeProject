@@ -20,7 +20,7 @@ public class LandingPage {
     }
 
     public boolean exists(){
-        waitUtility = new WaitUtility();
+        waitUtility = new WaitUtility(driver);
         return waitUtility.waitForElementsToLoadAndValidatePage(LoginBtn, "Buy & Sell on NZ's #1 Auction & Classifieds Site | Trade Me");
     }
 

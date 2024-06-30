@@ -11,44 +11,47 @@ import org.openqa.selenium.*;
 
 
 public class WaitUtility {
-    WebDriver driver;
+    private static WebDriver driver;
 
-    public void waitUntilElementToBeClickable(By element){
+    public WaitUtility(WebDriver webDriver){
+        driver = webDriver;
+
+    }
+
+
+    public void waitUntilElementToBeClickable(By element) {
 
         WebElement webElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.elementToBeClickable(element));
     }
 
-    public void waitUntilElementToBeVisible(By element){
+    public void waitUntilElementToBeVisible(By element) {
 
         WebElement webElement = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfElementLocated(element));
     }
 
-    public void waitUntilElementsToBeVisible(By element){
+    public void waitUntilElementsToBeVisible(By element) {
 
         List<WebElement> webElements = new WebDriverWait(driver, Duration.ofSeconds(10))
                 .until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));
     }
 
-    public boolean waitForElementsToLoadAndValidatePage(By element, String title){
-        try{
+    public static boolean waitForElementsToLoadAndValidatePage(By element, String title) {
+        try {
             new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));
             return driver.getTitle().contains(title);
-        }
-        catch(Exception var){
+        } catch (Exception var) {
             return false;
         }
     }
 
 
-    public boolean waitForElementToLoadAndValidatePage(By element, String title){
-        try{
-            new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.presenceOfAllElementsLocatedBy(element));
-            return driver.getTitle().contains(title);
-        }
-        catch(Exception var){
-            return false;
-        }
+    public void waitForElementToLoadAndValidatePage(By element) {
+
+
     }
+
+
+
 }
