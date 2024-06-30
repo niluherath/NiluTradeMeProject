@@ -2,7 +2,7 @@ package UI_test.Login;
 
 
 import testframe.base.BaseClass;
-import PageObjects.LandingPage;
+import testframe.pageobjects.LandingPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 

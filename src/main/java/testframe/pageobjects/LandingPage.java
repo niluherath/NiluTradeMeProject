@@ -1,4 +1,4 @@
-package PageObjects;
+package testframe.pageobjects;
 import testframe.utils.WaitUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

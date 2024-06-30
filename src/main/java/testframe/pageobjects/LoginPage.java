@@ -1,4 +1,4 @@
-package PageObjects;
+package testframe.pageobjects;
 
 import testframe.utils.ConfigLoader;
 import org.openqa.selenium.By;

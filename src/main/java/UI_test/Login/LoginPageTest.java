@@ -1,8 +1,8 @@
 package UI_test.Login;
 
 import testframe.base.BaseClass;
-import PageObjects.LandingPage;
-import PageObjects.LoginPage;
+import testframe.pageobjects.LandingPage;
+import testframe.pageobjects.LoginPage;
 
 public class LoginPageTest extends BaseClass {
 
