@@ -4,6 +4,8 @@
         <suite-files>
             <suite-file path="./landing.xml"/>
             <suite-file path="./motors.xml"/>
+            <suite-file path="./api.xml"/>
+
 
         </suite-files>
 </suite>

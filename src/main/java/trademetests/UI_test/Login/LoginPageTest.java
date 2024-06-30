@@ -16,11 +16,11 @@ public class LoginPageTest extends UIBaseClass {
         landingPage.clickLogin();
         and(" Login page page pops up");
         LoginPage loginPage = new LoginPage(driver);
-        System.out.println("....."+driver.getTitle());
         loginPage.enterUsername();
         loginPage.enterPassword();
         loginPage.clickLogin();
         driver.switchTo().parentFrame();
+        logger.info("Successfully logs in");
         HomePage homePage = new HomePage(driver);
         Assert.assertEquals(homePage.getTitle(), "Log in | Trade Me");
 

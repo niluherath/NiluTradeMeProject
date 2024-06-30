@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 import testframe.utils.ConfigLoader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -29,12 +30,16 @@ public abstract class UIBaseClass {
     public ExtentReports extent;
     public ExtentTest logger;
 
-    @BeforeTest
+
+
+    @BeforeSuite
     public void startReport() {
         // Create an object of Extent Reports
         extent = new ExtentReports();
 
-        spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/target/ExtentReport.html");
+        String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+
+        spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/target/ExtentReport."+dateName+".html");
         extent.attachReporter(spark);
         extent.setSystemInfo("Host Name", "Nilu Trade me project");
         extent.setSystemInfo("Environment", "");
@@ -45,6 +50,7 @@ public abstract class UIBaseClass {
         // Dark Theme
         spark.config().setTheme(Theme.STANDARD);
     }
+
 
     //This method is to capture the screenshot and return the path of the screenshot.
     public static String getScreenShot(WebDriver driver, String screenshotName) throws IOException {
@@ -60,7 +66,6 @@ public abstract class UIBaseClass {
 
     @BeforeMethod
     public void setup() {
-        System.out.println("Start driver");
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -107,13 +112,9 @@ public abstract class UIBaseClass {
         logger.info("<b>Then</b>"+then);
     }
 
-
-
-    @AfterTest
+    @AfterSuite
     public void endReport() {
         extent.flush();
     }
-
-
 
 }
