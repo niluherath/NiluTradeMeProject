@@ -20,9 +20,14 @@ public class LandingPage {
     }
     By LoginBtn = By.xpath("//a[contains(text(), 'Log in')]");
 
+    By motorsTab = By.xpath("//li[@class='tm-homepage-search-header__vertical-links-list-item'][3]");
+
     //Method to click login button
     public void clickLogin() {
         driver.findElement(LoginBtn).click();
+    }
+    public void clickMotorsTab() {
+        driver.findElement(motorsTab).click();
     }
 
 
