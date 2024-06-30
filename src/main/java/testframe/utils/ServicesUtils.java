@@ -1,10 +1,10 @@
-package testframe.base;
+package testframe.utils;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class ServicesBaseClass {
+public class ServicesUtils {
 
     public static Response getMotorCatalogue(){
         RestAssured.baseURI = "https://api.trademe.co.nz";
