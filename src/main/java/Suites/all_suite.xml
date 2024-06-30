@@ -3,8 +3,9 @@
 <suite name="Landing Page Test Suite" >
     <test verbose="2" preserve-order="true" name="C:/cool-workspace/NiluTestProject/src/test/java">
         <classes>
-            <class name="trademetests.UI_test.Login.LandingPageTest"></class>
-            <class name="trademetests.UI_test.Motors.MotorsPageTest"></class>
+         <!--   <class name="trademetests.UI_test.LandingPage.LandingPageTest"></class>-->
+            <class name="trademetests.UI_test.Login.LoginPageTest"></class>
+            <!--  <class name="trademetests.UI_test.Motors.MotorsPageTest"></class>-->
 
         </classes>
     </test>

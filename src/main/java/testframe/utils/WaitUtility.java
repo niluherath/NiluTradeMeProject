@@ -13,8 +13,7 @@ import org.openqa.selenium.*;
 public class WaitUtility {
     private static WebDriver driver;
 
-    public WaitUtility(WebDriver webDriver){
-        driver = webDriver;
+    public WaitUtility(){
 
     }
 
@@ -48,6 +47,20 @@ public class WaitUtility {
 
 
     public void waitForElementToLoadAndValidatePage(By element) {
+
+
+    }
+
+    public void waitForPageToLoad(WebDriver driver, By element){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
+
+    }
+
+    public void waitForIFrameToLoad(WebDriver driver){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        WebElement element = driver.findElement(By.xpath("//iframe[@class='tm-auth-service-login-iframe__iframe ng-star-inserted']"));
+        driver.switchTo().frame(element);
 
 
     }

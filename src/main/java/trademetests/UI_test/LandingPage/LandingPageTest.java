@@ -1,4 +1,4 @@
-package trademetests.UI_test.Login;
+package trademetests.UI_test.LandingPage;
 
 
 import testframe.base.UIBaseClass;

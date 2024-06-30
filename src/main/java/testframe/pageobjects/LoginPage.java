@@ -4,17 +4,19 @@ import testframe.utils.ConfigLoader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import testframe.utils.WaitUtility;
 
 import java.time.Duration;
 
 public class LoginPage {
 
     private WebDriver driver;
+    private WaitUtility waitUtility;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
-        System.out.println("exists method is called");
-        this.exists();
+        waitUtility = new WaitUtility();
+        waitUtility.waitForIFrameToLoad(driver);
 
     }
 
@@ -37,11 +39,6 @@ public class LoginPage {
         driver.findElement(loginBtn).click();
     }
 
-    public void exists() {
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        WebElement element = driver.findElement(By.xpath("//iframe[@class='tm-auth-service-login-iframe__iframe ng-star-inserted']"));
-        driver.switchTo().frame(element);
 
-    }
 
 }
