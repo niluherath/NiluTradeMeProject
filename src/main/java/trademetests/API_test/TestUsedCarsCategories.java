@@ -9,8 +9,8 @@ public class TestUsedCarsCategories {
 
     @Test
     public void testUsedCarsCategories(){
-        Response response = ServicesUtils.getMotorCatalogue();
+        // https://www.trademe.co.nz/a/motors/cars/ferrari/search?auto_category_jump=false
+        Response response = ServicesUtils.getNoOfFerrariMakes();
         Assert.assertEquals(response.statusCode(), 200);
-
     }
 }
