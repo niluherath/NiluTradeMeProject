@@ -1,6 +1,6 @@
 package Base;
 
-import Utils.ConfigLoader;
+import testframe.utils.ConfigLoader;
 import com.aventstack.extentreports.ExtentTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.*;

@@ -1,9 +1,7 @@
 package PageObjects;
 
-import Utils.ConfigLoader;
-import Utils.WaitUtility;
+import testframe.utils.ConfigLoader;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 

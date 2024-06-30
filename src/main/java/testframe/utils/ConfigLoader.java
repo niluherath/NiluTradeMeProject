@@ -1,4 +1,4 @@
-package Utils;
+package testframe.utils;
 
 import java.util.Properties;
 

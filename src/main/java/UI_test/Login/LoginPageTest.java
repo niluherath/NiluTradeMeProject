@@ -1,15 +1,8 @@
 package UI_test.Login;
 
-import Base.BaseClass;
+import testframe.base.BaseClass;
 import PageObjects.LandingPage;
 import PageObjects.LoginPage;
-import Utils.ConfigLoader;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 public class LoginPageTest extends BaseClass {
 
