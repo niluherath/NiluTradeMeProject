@@ -8,7 +8,7 @@ public class ConfigLoader {
 
     //singleton constructor
     private ConfigLoader() {
-        properties = PropertyUtils.propertyLoader("C:\\gitRepos\\NiluTradeMeProject\\src\\main\\resources\\config.properties");
+        properties = PropertyUtils.propertyLoader(System.getProperty("user.dir")+"/src/main/resources/config.properties");
     }
 
     public static ConfigLoader getInstance() {
