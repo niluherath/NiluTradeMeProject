@@ -14,8 +14,6 @@ public class MotorsPageTest extends UIBaseClass {
     private static final String BMW = "BMW";
     private static final String HONDA = "Honda";
     private static final String MAZDA = "Mazda";
-    private boolean hasZero;
-
 
     @Test
     public void testNoOfFerrariMakes()
