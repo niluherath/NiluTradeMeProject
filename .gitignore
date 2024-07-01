@@ -39,8 +39,6 @@ build/
 
 ## ignore these ....
 Screenshots/
-test-output/ExtentReport/
-test-output/STMExtentReport.html
-test-output/dashboard.html
+/test-output
 bash.exe.stackdump
 
