@@ -10,6 +10,12 @@ import testframe.pageobjects.LandingPage;
 
 public class MotorsPageTest extends UIBaseClass {
 
+    private static final String FERRARI = "Ferrari";
+    private static final String BMW = "BMW";
+    private static final String HONDA = "Honda";
+    private static final String MAZDA = "Mazda";
+    private boolean hasZero;
+
 
     @Test
     public void testNoOfFerrariMakes()
@@ -20,15 +26,15 @@ public class MotorsPageTest extends UIBaseClass {
         landingPage.clickMotorsTab();
         CarsForSalePage carsForSalePage = new CarsForSalePage(driver);
         when(" Selects Ferrari make");
-        carsForSalePage.selectCar("Ferrari");
+        carsForSalePage.selectCar(FERRARI);
         carsForSalePage.clickViewListings();
         then(" Search results shows the number listed fot that make");
         CarsListingPage carsListingPage = new CarsListingPage(driver);
-        Assert.assertTrue(Integer.parseInt(carsListingPage.getSearchResults())>0);
+        String results = carsListingPage.getSearchResults();
+        Assert.assertTrue(getIntValue(results)>0);
         logger.info("No of Ferrari cars on the list: "+carsListingPage.getSearchResults());
     }
-
-    @org.testng.annotations.Test(description="This test validates that no of BMW cars returned is not equal to 0")
+    @Test(description="This test validates that no of BMW cars returned is not equal to 0")
     public void testNoOfBMWMakes()
     {
         logger = extent.createTest("To verify no of BMW makes");
@@ -37,15 +43,16 @@ public class MotorsPageTest extends UIBaseClass {
         landingPage.clickMotorsTab();
         CarsForSalePage carsForSalePage = new CarsForSalePage(driver);
         when(" Selects BMW make");
-        carsForSalePage.selectCar("BMW");
+        carsForSalePage.selectCar(BMW);
         carsForSalePage.clickViewListings();
         then(" Search results shows the number listed fot that make");
         CarsListingPage carsListingPage = new CarsListingPage(driver);
-        Assert.assertTrue(Integer.parseInt(carsListingPage.getSearchResults())>0);
+        String results = carsListingPage.getSearchResults();
+        Assert.assertTrue(getIntValue(results)>0);
         logger.info("No of BMW cars on the list: "+carsListingPage.getSearchResults());
     }
 
-    @org.testng.annotations.Test(description="This test validates that no of Mazda cars returned is not equal to 0")
+    @Test(description="This test validates that no of Mazda cars returned is not equal to 0")
     public void testNoOfMazdaMakes()
     {
         logger = extent.createTest("To verify no of Mazda makes");
@@ -54,15 +61,16 @@ public class MotorsPageTest extends UIBaseClass {
         landingPage.clickMotorsTab();
         CarsForSalePage carsForSalePage = new CarsForSalePage(driver);
         when(" Selects Mazda make");
-        carsForSalePage.selectCar("Mazda");
+        carsForSalePage.selectCar(MAZDA);
         carsForSalePage.clickViewListings();
         then(" Search results shows the number listed fot that make");
         CarsListingPage carsListingPage = new CarsListingPage(driver);
-        Assert.assertTrue(Integer.parseInt(carsListingPage.getSearchResults())>0);
+        String results = carsListingPage.getSearchResults();
+        Assert.assertTrue(getIntValue(results)>0);
         logger.info("No of Mazda cars on the list: "+carsListingPage.getSearchResults());
     }
 
-    @org.testng.annotations.Test(description="This test validates that no of Honda cars returned is not equal to 0")
+    @Test(description="This test validates that no of Honda cars returned is not equal to 0")
     public void testNoOfHondaMakes()
     {
         logger = extent.createTest("To verify no of Honda makes");
@@ -71,11 +79,21 @@ public class MotorsPageTest extends UIBaseClass {
         landingPage.clickMotorsTab();
         CarsForSalePage carsForSalePage = new CarsForSalePage(driver);
         when(" Selects Honda make");
-        carsForSalePage.selectCar("Honda");
+        carsForSalePage.selectCar(HONDA);
         carsForSalePage.clickViewListings();
         then(" Search results shows the number listed fot that make");
         CarsListingPage carsListingPage = new CarsListingPage(driver);
-        Assert.assertTrue(Integer.parseInt(carsListingPage.getSearchResults())>0);
+        String results = carsListingPage.getSearchResults();
+        Assert.assertTrue(getIntValue(results)>0);
         logger.info("No of Honda cars on the list: "+carsListingPage.getSearchResults());
+    }
+
+
+    private int getIntValue(String resultSring) {
+        resultSring = resultSring.replace("Showing","")
+                .replace("results","")
+                .replace(",","")
+                .replace(" ","");
+        return Integer.parseInt(resultSring);
     }
 }

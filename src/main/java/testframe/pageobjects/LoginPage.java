@@ -5,19 +5,18 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import testframe.utils.ConfigLoader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import testframe.utils.WaitUtility;
+import testframe.utils.WaitUtil;
 
 import java.time.Duration;
 
 public class LoginPage {
 
     private WebDriver driver;
-    private WaitUtility waitUtility;
+    private WaitUtil waitUtility;
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
-        waitUtility = new WaitUtility();
+        waitUtility = new WaitUtil();
         waitUtility.waitForIFrameToLoad(driver);
     }
 

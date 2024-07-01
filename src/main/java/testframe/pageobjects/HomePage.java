@@ -3,16 +3,16 @@ package testframe.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import testframe.utils.ConfigLoader;
-import testframe.utils.WaitUtility;
+import testframe.utils.WaitUtil;
 
 public class HomePage {
 
     private WebDriver driver;
-    private WaitUtility waitUtility;
+    private WaitUtil waitUtility;
 
     public HomePage(WebDriver driver) {
         this.driver = driver;
-        waitUtility = new WaitUtility();
+        waitUtility = new WaitUtil();
         waitUtility.waitForPageToLoad(driver, motorsTab);
 
     }

@@ -3,16 +3,15 @@ package testframe.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import testframe.utils.WaitUtility;
+import testframe.utils.WaitUtil;
 
 import java.time.Duration;
 
 public class CarsListingPage {
 
     private WebDriver driver;
-    private WaitUtility waitUtility;
+    private WaitUtil waitUtility;
 
     public CarsListingPage(WebDriver driver) {
         this.driver=driver;

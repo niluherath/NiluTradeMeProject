@@ -1,18 +1,17 @@
 package testframe.pageobjects;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import testframe.utils.WaitUtility;
+import org.openqa.selenium.WebDriver;import testframe.utils.WaitUtil;
 import org.openqa.selenium.support.ui.Select;
 
 public class CarsForSalePage {
 
     private WebDriver driver;
-    private WaitUtility waitUtility;
+    private WaitUtil waitUtility;
 
     public CarsForSalePage(WebDriver driver) {
         this.driver=driver;
-        waitUtility = new WaitUtility();
+        waitUtility = new WaitUtil();
         waitUtility.waitForPageToLoad(driver, carsForSaleText);
     }
     By carsForSaleText = By.xpath("//h1[contains(text(), 'Cars for sale NZ')]");

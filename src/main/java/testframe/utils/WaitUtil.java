@@ -5,12 +5,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
-import java.util.List;
 
 import org.openqa.selenium.*;
 
 
-public class WaitUtility {
+public class WaitUtil {
 
     public void waitForPageToLoad(WebDriver driver, By element){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
