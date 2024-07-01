@@ -26,21 +26,19 @@ import testframe.utils.DateUtil;
 
 public abstract class UIBaseClass {
 
-    public WebDriver driver;
-    public ExtentSparkReporter spark;
-    public ExtentReports extent;
-    public ExtentTest logger;
-    private static DateUtil dateUtil;
+    protected WebDriver driver;
+    protected ExtentSparkReporter spark;
+    protected ExtentReports extent;
+    protected ExtentTest logger;
 
-
+    private static String PROPERTY_USER_DIR = "user.dir";
 
     @BeforeSuite
     public void startReport() {
         extent = new ExtentReports();
-        dateUtil = new DateUtil();
-        String dateName = dateUtil.getDateInyyyyMMddhhmmssFormat();
+        String timeStamp = DateUtil.getDateInyyyyMMddhhmmssFormat();
 
-        spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/target/ExtentReport."+dateName+".html");
+        spark = new ExtentSparkReporter(System.getProperty(PROPERTY_USER_DIR) + "/target/ExtentReport."+timeStamp+".html");
         extent.attachReporter(spark);
         extent.setSystemInfo("Host Name", "Nilu Trade me project");
         extent.setSystemInfo("Environment", "");
@@ -50,14 +48,11 @@ public abstract class UIBaseClass {
         spark.config().setTheme(Theme.STANDARD);
     }
 
-
-    //This method is to capture the screenshot and return the path of the screenshot.
     public static String getScreenShot(WebDriver driver, String screenshotName) throws IOException {
-        String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        String timeStamp = DateUtil.getDateInyyyyMMddhhmmssFormat();
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
-// after execution, you could see a folder "FailedTestsScreenshots" under src folder
-        String destination = System.getProperty("user.dir") + "/Screenshots/" + screenshotName + dateName + ".png";
+        String destination = System.getProperty(PROPERTY_USER_DIR) + "/Screenshots/" + screenshotName + timeStamp + ".png";
         File finalDestination = new File(destination);
         FileUtils.copyFile(source, finalDestination);
         return destination;
@@ -74,14 +69,9 @@ public abstract class UIBaseClass {
     @AfterMethod
     public void getResult(ITestResult result) throws Exception{
         if(result.getStatus() == ITestResult.FAILURE){
-//MarkupHelper is used to display the output in different colors
             logger.log(Status.FAIL, MarkupHelper.createLabel(result.getName() + " - Test Case Failed", ExtentColor.RED));
             logger.log(Status.FAIL, MarkupHelper.createLabel(result.getThrowable() + " - Test Case Failed", ExtentColor.RED));
-//To capture screenshot path and store the path of the screenshot in the string "screenshotPath"
-//We do pass the path captured by this method in to the extent reports using "logger.addScreenCapture" method.
-//String Scrnshot=TakeScreenshot.captuerScreenshot(driver,"TestCaseFailed");
             String screenshotPath = getScreenShot(driver, result.getName());
-//To add it in the extent report
             logger.fail("Test Case Failed Snapshot is below " + logger.addScreenCaptureFromPath(screenshotPath));
         }
         else if(result.getStatus() == ITestResult.SKIP){
@@ -95,7 +85,6 @@ public abstract class UIBaseClass {
     }
 
     public void given(String given){
-
         logger.info("<b>Given</b>"+given);
     }
 
