@@ -9,7 +9,6 @@ import org.testng.Assert;
 
 public class LandingPageTest extends UIBaseClass {
 
-
     @org.testng.annotations.Test(description="This test validates the Trade me landing page title")
     public void testLandingPage()
     {
