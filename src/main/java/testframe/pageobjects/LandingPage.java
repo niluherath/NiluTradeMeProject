@@ -30,6 +30,11 @@ public class LandingPage {
         driver.findElement(motorsTab).click();
     }
 
+    public String getTitle(){
+        return driver.getTitle();
+    }
+
+
 
 
 }

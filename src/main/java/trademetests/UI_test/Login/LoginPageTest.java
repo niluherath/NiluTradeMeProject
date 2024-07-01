@@ -8,7 +8,7 @@ import testframe.pageobjects.LoginPage;
 
 public class LoginPageTest extends UIBaseClass {
 
-    @org.testng.annotations.Test
+    @org.testng.annotations.Test(description="This test validates successful login")
     public void testLogin()  {
         logger = extent.createTest("To verify Trade me login");
         given(" Landing page pops up");

@@ -33,7 +33,7 @@ public class ConfigLoader {
         if(prop!=null){
             return prop;
         }
-        else throw new RuntimeException("baseUrl property could not be found in config.properties file");
+        else throw new RuntimeException("user name for trademe login property could not be found in config.properties file");
     }
 
     public String getPassWord(){
@@ -41,7 +41,15 @@ public class ConfigLoader {
         if(prop!=null){
             return prop;
         }
-        else throw new RuntimeException("baseUrl property could not be found in config.properties file");
+        else throw new RuntimeException("password for trademe login property could not be found in config.properties file");
+    }
+
+    public String getAPIBaseUrl(){
+        String prop = properties.getProperty("apiBaseUrl");
+        if(prop!=null){
+            return prop;
+        }
+        else throw new RuntimeException("baseUrl for API property could not be found in config.properties file");
     }
 
 

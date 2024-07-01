@@ -19,7 +19,6 @@ public class LoginPage {
         this.driver = driver;
         waitUtility = new WaitUtility();
         waitUtility.waitForIFrameToLoad(driver);
-
     }
 
     By userName = By.xpath("//input[@name='Email']");

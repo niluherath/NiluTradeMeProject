@@ -29,11 +29,12 @@ import java.util.Date;
 
 public abstract class APIBaseClass {
 
-    public WebDriver driver;
-    public ExtentSparkReporter spark;
-    public ExtentReports extent;
-    public ExtentTest logger;
+    protected WebDriver driver;
+    protected ExtentSparkReporter spark;
+    protected ExtentReports extent;
+    protected ExtentTest logger;
     private static DateUtil dateUtil;
+    protected static final int RESPONSE_CODE_200 = 200;
 
     @BeforeSuite
     public void startReport() {
