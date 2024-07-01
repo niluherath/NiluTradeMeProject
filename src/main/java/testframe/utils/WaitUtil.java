@@ -16,8 +16,7 @@ public class WaitUtil {
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 
-    public void waitForIFrameToLoad(WebDriver driver){
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+    public void waitForIFrameToLoad(WebDriver driver){driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         WebElement element = driver.findElement(By.xpath("//iframe[@class='tm-auth-service-login-iframe__iframe ng-star-inserted']"));
         driver.switchTo().frame(element);
     }

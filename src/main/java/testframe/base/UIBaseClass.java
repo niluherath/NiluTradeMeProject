@@ -44,7 +44,7 @@ public abstract class UIBaseClass {
         extent.setSystemInfo("Environment", "");
         extent.setSystemInfo("User Name", "Nilu Herath");
         spark.config().setDocumentTitle("Nilu Trade me Project");
-        spark.config().setReportName("Name of the Report Comes here ");
+        spark.config().setReportName("Nilu Trade me Test Project ");
         spark.config().setTheme(Theme.STANDARD);
     }
 

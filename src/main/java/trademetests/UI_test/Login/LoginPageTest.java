@@ -1,5 +1,6 @@
 package trademetests.UI_test.Login;
 
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import testframe.base.UIBaseClass;
 import testframe.pageobjects.HomePage;
@@ -16,6 +17,7 @@ public class LoginPageTest extends UIBaseClass {
         landingPage.clickLogin();
         and(" Login page page pops up");
         LoginPage loginPage = new LoginPage(driver);
+        Assert.assertEquals(driver.findElement(By.xpath("//button[@value='login']")).getText(),"Log in");
         loginPage.enterUsername();
         loginPage.enterPassword();
         loginPage.clickLogin();
