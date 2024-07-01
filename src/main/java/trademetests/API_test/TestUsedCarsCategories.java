@@ -5,8 +5,6 @@ import testframe.base.APIBaseClass;
 import testframe.utils.ServicesUtils;
 import io.restassured.response.Response;
 import org.testng.Assert;
-import org.testng.annotations.Test;
-
 import java.util.List;
 
 public class TestUsedCarsCategories extends APIBaseClass {

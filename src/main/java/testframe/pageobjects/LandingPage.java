@@ -1,4 +1,5 @@
 package testframe.pageobjects;
+
 import testframe.utils.WaitUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +18,6 @@ public class LandingPage {
 
     By motorsTab = By.xpath("//li[@class='tm-homepage-search-header__vertical-links-list-item'][3]");
 
-    //Method to click login button
     public void clickLogin() {
         driver.findElement(LoginBtn).click();
     }

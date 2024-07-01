@@ -29,10 +29,6 @@ public class CarsForSalePage {
         driver.findElement(viewListings).click();
     }
 
-    public String getSearchResults(){
-        return driver.findElement(searchResults).getText();
-    }
-
 
 
 
